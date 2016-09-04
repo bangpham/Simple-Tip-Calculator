@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Index</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="reset.css" rel="stylesheet" type="text/css"/>﻿
+    <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="container-fluids" id="wrapper">
+                <ul id="content">
+                    <li>
+                        <h1>Tip Calculator<h1>
+                    </li>
+                    <li>
+                        <span id= "total">Total bill :</span>
+                        $ <input type="text" autocomplete="off" id="bill" class="amount-field" autofocus>
+                    </li>
+                    <li> <span> Tip to leave: </span>
+                        <span id="tipamount" class="tip-amount">$0.00</span>
+                    </li>
+
+                    <li id="butt">
+                        <span>
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        <div style="display: inline" id="circle">
+                            <span id="percent">%15</span>
+                        </div>
+                        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                    </span>
+                            
+                    </li>
+
+                </ul>
+                                                       
+        </div>
+        <script>
+            function calculate(){
+                var bill = ($("#bill").val());
+                var percent = ($('#percent').text()).replace(/[^0-9]/g, '');
+                var percent = parseInt(percent);
+                if (bill == null || bill == '') {
+                    tipamount.innerHTML = 'Invalid input';
+                    return false;
+                }
+                if(isNaN(bill)) {
+                    tipamount.innerHTML = 'Invalid input';         
+                    return false;
+                }
+                var tip = bill * (percent * 0.01);
+                if(bill >= 0){
+                    tipamount.innerHTML = "$" + tip.toFixed(2);
+                }
+            }
+            function changePercentStyle(color) {
+                $("#circle").css('background-color', color);
+                $("#circle").css("transition", 'ease 0.4s');
+            }
+            $(".glyphicon").hover(
+                function() {
+                    changePercentStyle('#80E8C1');
+                },
+                function() {
+                    changePercentStyle('#54D6A6');
+                }
+
+                );
+            $("#circle").hover(
+                function() {
+                    changePercentStyle('#80E8C1');
+                },
+                function() {
+                    changePercentStyle('#54D6A6');
+                }
+
+                );
+            
+            $("input").keyup(function () {
+                calculate();
+            });
+            $(".glyphicon-plus").click(function(){
+                var percent = ($('#percent').text()).replace(/[^0-9]/g, '');
+                if (parseInt(percent) + 5 <= 100) {
+                    var percent = parseInt(percent) + 5;
+                }
+                percent.innerHTML = percent;
+                $("#percent").text("%" + percent);
+                calculate();
+            });
+
+            $(".glyphicon-minus").click(function(){
+                var percent = ($('#percent').text()).replace(/[^0-9]/g, '');
+                if (parseInt(percent) - 5 >= 0) {
+                    var percent = parseInt(percent) - 5;
+                }
+                percent.innerHTML = percent;
+                $("#percent").text("%" + percent);
+                calculate();
+            });
+        </script>
+    </body>
+</html>

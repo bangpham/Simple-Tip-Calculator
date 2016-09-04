@@ -1,0 +1,121 @@
+body {
+	margin: 0;
+	font-size: 100%;
+	font: 1em/1.3 'Oxyggen','Helvetica',arial,sans-serif;
+	font-weight: 100;
+	line-height: 0%;
+}
+h1 {
+	pa
+	font-size: 100%;
+	font: 1.8em/1.3 'Oxyggen','Helvetica',arial,sans-serif;
+	font-weight: 200;
+	color: #fff ;
+	margin: 0;
+}
+
+li {
+	line-height: 2em;
+}
+#content {
+	padding-top: 2em;
+	vertical-align: middle;
+	color: #fff;
+	text-align: center;
+	font-size: 120%;
+	height: 100vh;
+	width: 100vw;
+	background-size: cover;
+	background-image:
+    radial-gradient(circle at bottom right, #36755E, #3CBC8D 30%);    
+	display: table;
+}
+.glyphicon , #tipamount {
+	font-size: 2.5em;
+	text-shadow: 3px 3px 2px #2E6E56;
+}
+.glyphicon:hover {
+	color: red;
+	text-shadow: 5px 5px 5px #2E6E56;
+	transition: ease 0.4s;
+}
+.glyphicon:active {
+	color: red;
+	text-shadow: 7px 7px 1px #2E6E56;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+ul {
+	text-decoration: none;
+	list-style: none;
+	text-shadow: 2px 2px 3px #2E6E56;
+}
+
+#butt {
+	display: flex-block;
+	padding-top: 3.5em;
+}
+#circle {
+    position: relative;
+    background-color: #54D6A6;
+    margin: 10px auto;
+    margin: 10px 10px;
+    padding: 3.6em 4.2em;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    box-shadow: 2px 2px 1px #2E6E56;
+    
+}
+#percent {
+    color: #2E6E56;
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: none;
+}
+
+input[type=text] {
+	font-size: 2em;
+	border: none;
+	border-bottom: 2px solid red;
+    background-color: #3CBC8D;
+    color: #2E6E56;
+    width: 3em;
+    transition: 0.5s;
+}
+input[type=text]:focus{
+	color: #fff;
+	outline: none;
+	font-size: 2em;
+	text-shadow: 10px 10px 5px #2E6E56;
+}
+input[type=text]:hover{
+	outline: none;
+	width: 4.5em;
+	color: #fff;
+	text-shadow: 10px 10px 5px #2E6E56;
+	transition: width .5s;
+}
+input.middle:focus {
+    outline-width: 0;
+}
+#circle:hover {
+	box-shadow: 5px 5px 5px #2E6E56;
+	text-shadow: 10px 10px 1px #2E6E56;
+}
+
+#circle:active {
+	box-shadow: 15px 15px 2px #2E6E56;
+}
+#tipamount:hover{
+	text-shadow: 5px 5px 1px #2E6E56;
+	transition: .5s;
+}
+
